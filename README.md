@@ -6,6 +6,10 @@ Nest provides a minimal interface between web servers supporting Swift and  web 
 
 - [Specification](Specification.md)
 
+## Current Status
+
+The specification is currently a draft, there are a couple of planned changes in the issue tracker and we welcome anyone to contribute to help improve the specification before we release version 1.0.0.
+
 ## Rationale and Goals
 
 The primary goal of Nest is to enable the use of any framework or application with any server. To prevent tight coupling between web servers and web applications or frameworks.
