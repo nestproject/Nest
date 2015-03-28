@@ -15,7 +15,7 @@ A Nest application is a simple Swift function that takes exactly one argument, t
 The full type of the application function is as follows:
 
 ```swift
-([String:AnyObject]) -> (String, [(String, String)], String)
+([String:AnyObject]) -> (String, [(String, String)], String?)
 ```
 
 ### Environment
@@ -33,12 +33,11 @@ This is an HTTP status. It must be a string containing a 3-digit integer result 
 
 The headers is an array of tuples containing the key and value for each HTTP header for the server to send in the returned order.
 
-#### Body (`String`)
+#### Body (`String?`)
 
-The body must be a String.
+The body must be a String or nil.
 
 ## Server
 
 The server or gateway invokes the applications function once for each request
 from a client.
-
