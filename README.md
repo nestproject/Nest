@@ -34,7 +34,9 @@ Along with providing a specification, Nest also provides a test suite to ensure 
 
 ## Implementations
 
-There are no current implementations.
+### Other
+
+- [Inquiline](https://github.com/nestproject/Inquiline) - A collection of constants and typealiases to aid dealing with Nest.
 
 ## License
 
