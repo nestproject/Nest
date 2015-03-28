@@ -1,5 +1,7 @@
 # Nest - Swift Web Server Gateway Interface
 
+[![Build Status](http://img.shields.io/travis/nestproject/Nest/master.svg?style=flat)](https://travis-ci.org/nestproject/Nest)
+
 Nest provides a minimal interface between web servers supporting Swift and  web applications or frameworks. It’s designed to prevent tight coupling between web servers and web applications or frameworks. To enable the use of any framework or application with any server.
 
 ## Quick Links
