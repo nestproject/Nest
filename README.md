@@ -25,7 +25,7 @@ The interface must not make use any external frameworks and only depend on core 
 A simple Hello World web application using the Nest interface:
 
 ```swift
-func application(env:[String:AnyObject]) -> (String, [(String, String)], String) {
+func application(env:[String:AnyObject]) -> (String, [(String, String)], String?) {
     return ("200 OK", [("Content-Type", "text/plain")], "Hello World")
 }
 ```
