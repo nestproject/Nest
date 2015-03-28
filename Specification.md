@@ -18,10 +18,17 @@ The full type of the application function is as follows:
 ([String:AnyObject]) -> (String, [(String, String)], String?)
 ```
 
+## Server
+
+The server or gateway invokes the applications function once for each request
+from a client.
+
+## Details
+
 ### Environment
 
-- `REQUEST_METHOD`
-- `PATH_INFO`
+- `REQUEST_METHOD` (String) - The HTTP request method, such as “GET” or “POST”.
+- `PATH_INFO` (String) - The HTTP Path.
 
 ### The Response
 
@@ -37,7 +44,3 @@ The headers is an array of tuples containing the key and value for each HTTP hea
 
 The body must be a String or nil.
 
-## Server
-
-The server or gateway invokes the applications function once for each request
-from a client.
