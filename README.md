@@ -30,7 +30,7 @@ func application(env:[String:AnyObject]) -> (String, [(String, String)], String)
 
 ## Testing
 
-Along with providing a specification, Nest also provides a test suite to ensure that a server correctly follows the specification, and to aid development of web servers.
+Along with providing a specification, Nest also provides a [test suite](https://github.com/nestproject/NestTestSuite) to ensure that a server correctly follows the specification, and to aid development of web servers.
 
 ## Implementations
 
