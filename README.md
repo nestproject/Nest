@@ -47,6 +47,7 @@ Along with providing a specification, Nest also provides a [test suite](https://
 ### Other
 
 - [Inquiline](https://github.com/nestproject/Inquiline) - A collection of constants and typealiases to aid dealing with Nest.
+- [Padlock](https://github.com/nestproject/Padlock) - Nest middleware to lockup your web application.
 
 ## See Also
 
