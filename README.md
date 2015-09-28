@@ -25,8 +25,8 @@ The interface must not make use any external frameworks and only depend on core 
 A simple Hello World web application using the Nest interface:
 
 ```swift
-func application(env:[String:AnyObject]) -> (String, [(String, String)], String?) {
-    return ("200 OK", [("Content-Type", "text/plain")], "Hello World")
+func application(request:RequestType) -> ResponseType {
+    return Response(.Ok, body: "Hello World")
 }
 ```
 
@@ -46,7 +46,7 @@ Along with providing a specification, Nest also provides a [test suite](https://
 
 ### Other
 
-- [Inquiline](https://github.com/nestproject/Inquiline) - A collection of constants and typealiases to aid dealing with Nest.
+- [Inquiline](https://github.com/nestproject/Inquiline) - A standard implementation of RequestType and ResponseType.
 - [Padlock](https://github.com/nestproject/Padlock) - Nest middleware to lockup your web application.
 
 ## See Also

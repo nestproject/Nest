@@ -1,12 +1,12 @@
 Pod::Spec.new do |spec|
   spec.name = 'Nest'
-  spec.version = '0.1.0'
+  spec.version = '0.2.0'
   spec.summary = 'Swift Web Server Gateway Interface.'
   spec.homepage = 'https://github.com/nestproject/'
   spec.license = { :type => 'BSD', :file => 'LICENSE' }
   spec.author = { 'Kyle Fuller' => 'kyle@fuller.li' }
   spec.social_media_url = 'http://twitter.com/kylefuller'
-  spec.source = { :git => 'https://github.com/nestproject/Nest.git', :tag => "#{spec.version}" }
+  spec.source = { :git => 'https://github.com/nestproject/Nest.git', :tag => spec.version }
   spec.source_files = 'Nest.swift'
   spec.requires_arc = true
   spec.ios.deployment_target = '8.0'

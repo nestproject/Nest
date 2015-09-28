@@ -17,3 +17,5 @@ public protocol ResponseType {
   var body:String? { get }
 }
 
+public typealias Application = RequestType -> ResponseType
+

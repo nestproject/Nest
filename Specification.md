@@ -1,21 +1,25 @@
 ---
-Version: 0.1.0
+Version: 0.2.0
 ---
 
 # Nest Specification
 
-There are two components that make up the Nest interface, the “server” or “gateway” component, and the “application” or “framework” component.
+There are two components that make up the Nest interface, the “server” or
+“gateway” component, and the “application” or “framework” component.
 
 The server component invokes the function that is provided by the application.
 
 ## Application
 
-A Nest application is a simple Swift function that takes exactly one argument, the environment. It returns a tuple (the response) containing exactly three values, the status, headers and the body.
+A Nest application is a simple Swift function that takes exactly one argument,
+an object or structure that conforms to RequestType. It returns an instance
+of a ResponseType which contains exactly three values, the status, headers
+and the body.
 
 The full type of the application function is as follows:
 
 ```swift
-([String:AnyObject]) -> (String, [(String, String)], String?)
+RequestType -> ResponseType
 ```
 
 ## Server
@@ -23,14 +27,30 @@ The full type of the application function is as follows:
 The server or gateway invokes the applications function once for each request
 from a client.
 
-## Details
+```swift
+public typealias Header = (String, String)
+```
 
-### Environment
+## RequestType
 
-- `REQUEST_METHOD` (String) - The HTTP request method, such as “GET” or “POST”.
-- `PATH_INFO` (String) - The HTTP Path.
+```swift
+public protocol RequestType {
+  var method:String { get }
+  var path:String { get }
+  var headers:[Header] { get }
+  var body:String? { get }
+}
+```
 
-### The Response
+### ResponseType
+
+```swift
+public protocol ResponseType {
+  var statusLine:String { get }
+  var headers:[Header] { get }
+  var body:String? { get }
+}
+```
 
 #### Status (`String`)
 
