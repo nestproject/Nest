@@ -31,6 +31,29 @@ from a client.
 public typealias Header = (String, String)
 ```
 
+## InputStream
+
+```swift
+public protocol HttpInputStream {
+  public func readByte()  -> Byte;   // Reads one byte form the byte stream
+  public func readBytes() -> [Byte]; // Reads all the bytes until \r\n into a byte array
+  public func asString()  -> String; // Reads all content until \r\n, and converts it to a string
+  public func readLine()  -> String; // Reads a single line from the input stream
+}
+```
+
+## OutputStream
+
+```swift
+public protocol HttpOutputStream {
+  public func writeByte(Byte byte);       // Write a single byte
+  public func writeBytes([Byte] bytes);   // Write a series of bytes
+  public func writeString(String string); // Write a string
+  public func flush();                    // Flush buffers
+  public func close();                    // Writes \r\n, flushes, and then closes.
+}
+```
+
 ## RequestType
 
 ```swift
@@ -38,17 +61,7 @@ public protocol RequestType {
   var method:String { get }
   var path:String { get }
   var headers:[Header] { get }
-  var body:String? { get }
-}
-```
-
-### ResponseType
-
-```swift
-public protocol ResponseType {
-  var statusLine:String { get }
-  var headers:[Header] { get }
-  var body:String? { get }
+  var body:HttpInputStream { get }
 }
 ```
 
@@ -60,7 +73,29 @@ This is an HTTP status. It must be a string containing a 3-digit integer result 
 
 The headers is an array of tuples containing the key and value for each HTTP header for the server to send in the returned order.
 
-#### Body (`String?`)
+#### Body (`HttpInputStream`)
 
-The body must be a String or nil.
+Must be an HttpInputStream. If the body is empty, the HttpInputStream is empty.
+
+## ResponseType
+
+```swift
+public protocol ResponseType {
+  var statusLine:String { get }
+  var headers:[Header] { get }
+  var body:HttpOutputStream { get }
+}
+```
+
+#### Status (`String`)
+
+This is an HTTP status. It must be a string containing a 3-digit integer result code followed by a reason phrase. For example, `200 OK`.
+
+#### Headers (`[(String, String)]`)
+
+The headers is an array of tuples containing the key and value for each HTTP header for the server to send in the returned order.
+
+#### Body (`HttpOutputStream`)
+
+Must be an HttpOutputStream.
 
