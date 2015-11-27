@@ -1,7 +1,5 @@
 language: objective-c
-osx_image: xcode7
-before_install:
-- gem install cocoapods --no-document
+osx_image: xcode7.1
 script:
 - swiftc Nest.swift
 - pod lib lint
