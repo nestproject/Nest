@@ -38,7 +38,7 @@ public protocol RequestType {
   var method:String { get }
   var path:String { get }
   var headers:[Header] { get }
-  var body:NSInputStream { get }
+  var body:InputStreamable { get }
 }
 ```
 
@@ -60,7 +60,7 @@ The request body.
 public protocol ResponseType {
   var statusLine:String { get }
   var headers:[Header] { get }
-  var body:NSOutputStream { get }
+  var body:OutputStreamable { get }
 }
 ```
 
@@ -75,4 +75,33 @@ The headers is an array of tuples containing the key and value for each HTTP hea
 #### Body (`NSOutputStream`)
 
 The response body 
+
+## OutputStreamable
+
+```swift
+public protocol OutputStreamable {
+    public func writeBytes([Int8] bytes);
+}
+```
+
+#### writeBytes
+
+Write bytes write the bytes passed to the output stream
+
+## InputStreamable
+
+```swift
+public protocol InputStreamable {
+    public func readBytes(count: Int) -> [Int8];
+}
+```
+
+#### readBytes
+
+Read a given amount of bytes from the input.
+If the given amount is not avaiable, the current thread will
+be blocked until it is.
+
+
+
 
