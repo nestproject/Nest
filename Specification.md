@@ -38,17 +38,7 @@ public protocol RequestType {
   var method:String { get }
   var path:String { get }
   var headers:[Header] { get }
-  var body:String? { get }
-}
-```
-
-### ResponseType
-
-```swift
-public protocol ResponseType {
-  var statusLine:String { get }
-  var headers:[Header] { get }
-  var body:String? { get }
+  var body:InputStreamable { get }
 }
 ```
 
@@ -60,7 +50,58 @@ This is an HTTP status. It must be a string containing a 3-digit integer result 
 
 The headers is an array of tuples containing the key and value for each HTTP header for the server to send in the returned order.
 
-#### Body (`String?`)
+#### Body (`InputStreamable`)
 
-The body must be a String or nil.
+The request body.
+
+## ResponseType
+
+```swift
+public protocol ResponseType {
+  var statusLine:String { get }
+  var headers:[Header] { get }
+  var body:OutputStreamable { get }
+}
+```
+
+#### Status (`String`)
+
+This is an HTTP status. It must be a string containing a 3-digit integer result code followed by a reason phrase. For example, `200 OK`.
+
+#### Headers (`[(String, String)]`)
+
+The headers is an array of tuples containing the key and value for each HTTP header for the server to send in the returned order.
+
+#### Body (`OutputStreamable`)
+
+The response body 
+
+## OutputStreamable
+
+```swift
+public protocol OutputStreamable {
+    func writeBytes(bytes: [Int8]);
+}
+```
+
+#### writeBytes
+
+Write bytes write the bytes passed to the output stream
+
+## InputStreamable
+
+```swift
+public protocol InputStreamable {
+    func readBytes(count: Int) -> [Int8];
+}
+```
+
+#### readBytes
+
+Read a given amount of bytes from the input.
+If the given amount is not avaiable, the current thread will
+be blocked until it is.
+
+
+
 
