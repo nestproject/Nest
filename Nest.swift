@@ -6,7 +6,7 @@ public protocol RequestType {
   var method:String { get }
   var path:String { get }
   var headers:[Header] { get }
-  var body:String? { get }
+  var body:InputStreamable { get }
 }
 
 
@@ -14,7 +14,15 @@ public protocol RequestType {
 public protocol ResponseType {
   var statusLine:String { get }
   var headers:[Header] { get }
-  var body:String? { get }
+  var body:OutputStreamable { get }
+}
+
+public protocol InputStreamable {
+  func readBytes(count:int) -> [Int8]
+}
+
+public protocol OutputStreamable {
+  func writeBytes(bytes:[Int8])
 }
 
 public typealias Application = RequestType -> ResponseType
