@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name = 'Nest'
-  spec.version = '0.2.0'
+  spec.version = '0.2.1'
   spec.summary = 'Swift Web Server Gateway Interface.'
   spec.homepage = 'https://github.com/nestproject/'
   spec.license = { :type => 'BSD', :file => 'LICENSE' }
