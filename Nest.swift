@@ -18,7 +18,7 @@ public protocol ResponseType {
 }
 
 public protocol InputStreamable {
-  func readBytes(count:int) -> [Int8]
+  func readBytes(count:Int) -> [Int8]
 }
 
 public protocol OutputStreamable {
