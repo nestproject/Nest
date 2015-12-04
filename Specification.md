@@ -50,7 +50,7 @@ This is an HTTP status. It must be a string containing a 3-digit integer result 
 
 The headers is an array of tuples containing the key and value for each HTTP header for the server to send in the returned order.
 
-#### Body (`NSInputStream`)
+#### Body (`InputStreamable`)
 
 The request body.
 
@@ -72,7 +72,7 @@ This is an HTTP status. It must be a string containing a 3-digit integer result 
 
 The headers is an array of tuples containing the key and value for each HTTP header for the server to send in the returned order.
 
-#### Body (`NSOutputStream`)
+#### Body (`OutputStreamable`)
 
 The response body 
 
@@ -80,7 +80,7 @@ The response body
 
 ```swift
 public protocol OutputStreamable {
-    public func writeBytes([Int8] bytes);
+    func writeBytes(bytes: [Int8]);
 }
 ```
 
@@ -92,7 +92,7 @@ Write bytes write the bytes passed to the output stream
 
 ```swift
 public protocol InputStreamable {
-    public func readBytes(count: Int) -> [Int8];
+    func readBytes(count: Int) -> [Int8];
 }
 ```
 
