@@ -1,6 +1,6 @@
 # Nest - Swift Web Server Gateway Interface
 
-[![Build Status](http://img.shields.io/travis/nestproject/Nest/master.svg?style=flat)](https://travis-ci.org/nestproject/Nest)
+[![Build Status](https://img.shields.io/travis/nestproject/Nest/master.svg?style=flat)](https://travis-ci.org/nestproject/Nest)
 
 Nest provides a minimal interface between web servers supporting Swift and  web applications or frameworks. It’s designed to prevent tight coupling between web servers and web applications or frameworks. To enable the use of any framework or application with any server.
 
@@ -38,7 +38,7 @@ Along with providing a specification, Nest also provides a [test suite](https://
 
 ### Web Servers
 
-- [Currasow](https://github.com/kylef/Currasow) - Pre-forking worker model server.
+- [Currasow](https://github.com/kylef/Curassow) - Pre-forking worker model server.
 - [NestBox](https://github.com/nestproject/NestBox) - Basic Server Implementation.
 
 ## Web Frameworks
@@ -54,7 +54,7 @@ Along with providing a specification, Nest also provides a [test suite](https://
 
 - [Python WSGI](https://www.python.org/dev/peps/pep-0333/)
 - [Ruby Rack](http://rack.github.io)
-- [Perl Web Server Gateway Interface](http://en.wikipedia.org/wiki/PSGI)
+- [Perl Web Server Gateway Interface](https://en.wikipedia.org/wiki/PSGI)
 
 ## License
 
