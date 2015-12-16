@@ -11,7 +11,7 @@ Nest provides a minimal interface between web servers supporting Swift and  web 
 
 ## Current Status
 
-The specification is currently a draft, there are a couple of planned changes in the issue tracker and we welcome anyone to contribute to help improve the specification before we release version 1.0.0.
+The specification is currently a draft, there are a couple of planned changes in the issue tracker and we welcome anyone to contribute to help improve the specification before we release version 1.0.0. We provide a proposal system allowing you to propose changes via [NEPs](https://github.com/nestproject/neps).
 
 ## Rationale and Goals
 
