@@ -1,5 +1,5 @@
 ---
-Version: 0.2.0
+Version: 0.3.0
 ---
 
 # Nest Specification
@@ -27,6 +27,17 @@ RequestType -> ResponseType
 The server or gateway invokes the applications function once for each request
 from a client.
 
+## PayloadType
+
+Payload type represents a streamable HTTP body, either for a request or
+response.
+
+```
+public protocol PayloadType {
+  mutating func next() -> [UInt8]?
+}
+```
+
 ```swift
 public typealias Header = (String, String)
 ```
@@ -38,7 +49,7 @@ public protocol RequestType {
   var method:String { get }
   var path:String { get }
   var headers:[Header] { get }
-  var body:String? { get }
+  var body: PayloadType? { get set }
 }
 ```
 
@@ -48,7 +59,7 @@ public protocol RequestType {
 public protocol ResponseType {
   var statusLine:String { get }
   var headers:[Header] { get }
-  var body:String? { get }
+  var body: PayloadType? { get set }
 }
 ```
 
