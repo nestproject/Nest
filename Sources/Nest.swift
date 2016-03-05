@@ -14,7 +14,7 @@ public protocol RequestType {
   var method:String { get }
   var path:String { get }
   var headers:[Header] { get }
-  var body: PayloadType? { get }
+  var body: PayloadType? { get set }
 }
 
 
@@ -22,7 +22,7 @@ public protocol RequestType {
 public protocol ResponseType {
   var statusLine:String { get }
   var headers:[Header] { get }
-  var body: PayloadType? { get }
+  var body: PayloadType? { get set }
 }
 
 public typealias Application = RequestType -> ResponseType
