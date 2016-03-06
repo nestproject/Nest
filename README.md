@@ -51,6 +51,7 @@ Along with providing a specification, Nest also provides a [test suite](https://
 ### Other
 
 - [Inquiline](https://github.com/nestproject/Inquiline) - A standard implementation of RequestType and ResponseType.
+- [NestTest](http://github.com/nestproject/NestTest)
 - [Padlock](https://github.com/nestproject/Padlock) - Nest middleware to lockup your web application.
 
 ## See Also
