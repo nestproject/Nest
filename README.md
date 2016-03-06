@@ -40,6 +40,7 @@ Along with providing a specification, Nest also provides a [test suite](https://
 ### Web Servers
 
 - [Currasow](https://github.com/kylef/Curassow) - Pre-forking worker model server.
+- [http4swift](https://github.com/takebayashi/http4swift)
 - [NestBox](https://github.com/nestproject/NestBox) - Basic Server Implementation.
 
 ## Web Frameworks
