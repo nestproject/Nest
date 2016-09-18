@@ -25,5 +25,5 @@ public protocol ResponseType {
   var body: PayloadType? { get set }
 }
 
-public typealias Application = RequestType -> ResponseType
+public typealias Application = (RequestType) -> (ResponseType)
 
